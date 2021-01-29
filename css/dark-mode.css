@@ -1,0 +1,13 @@
+@media (prefers-color-scheme: dark) {
+    :root {
+        --white: #131313;
+        --black: #fff;
+        --dark: #f3f3f3;
+        --light: #222;
+
+        --filter-darker: brightness(115%);
+        --filter-lighter: brightness(85%);
+
+        --box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.3);
+    }
+}

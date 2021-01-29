@@ -1,0 +1,1067 @@
+/*
+Theme Name: M Media Snippet Theme
+Theme URI: https://github.com/M-Media-Group/Snippet-WordPress-Theme
+Author: mmediagroup
+Author URI: https://mediagroup.fr
+Description: A simple theme for testing Snippet.
+Version: 0.0.1
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: m-media-snippet-theme
+Tags: translation-ready
+GitHub Theme URI: https://github.com/M-Media-Group/Snippet-WordPress-Theme
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+m-media-snippet-theme is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Navigation
+	## Menus
+# Accessibility
+# Alignments
+# Widgets
+# Content
+	## Posts and pages
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+html {
+    line-height: 1.15; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+
+/**
+ * Remove the margin in all browsers.
+ */
+
+body {
+    margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+
+main {
+    display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+    box-sizing: content-box; /* 1 */
+    height: 0; /* 1 */
+    overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+
+a {
+    background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+    border-bottom: none; /* 1 */
+    text-decoration: underline; /* 2 */
+    text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+    font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+    font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+sup {
+    top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+
+img {
+    border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit; /* 1 */
+    font-size: 100%; /* 1 */
+    line-height: 1.15; /* 1 */
+    margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input {
+    /* 1 */
+    overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select {
+    /* 1 */
+    text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+    -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type='button']:-moz-focusring,
+[type='reset']:-moz-focusring,
+[type='submit']:-moz-focusring {
+    outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+
+fieldset {
+    padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+legend {
+    box-sizing: border-box; /* 1 */
+    color: inherit; /* 2 */
+    display: table; /* 1 */
+    max-width: 100%; /* 1 */
+    padding: 0; /* 3 */
+    white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+    vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+
+textarea {
+    overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+
+[type='checkbox'],
+[type='radio'] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
+    height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type='search'] {
+    -webkit-appearance: textfield; /* 1 */
+    outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+[type='search']::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button; /* 1 */
+    font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+
+details {
+    display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+    display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 10+.
+ */
+
+template {
+    display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+
+[hidden] {
+    display: none;
+}
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+html {
+    font-family: Roboto,HelveticaNeue,Helvetica Neue,Helvetica,Arial,sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  clear: both;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+abbr, acronym {
+  border-bottom: 1px dotted var(--gray);
+  cursor: help;
+}
+
+mark, ins {
+  background: var(--secondary);
+  text-decoration: none;
+}
+
+big {
+  font-size: 125%;
+}
+
+.archive .site-header {
+	margin-bottom: 3.5em;
+}
+
+.site-title {
+	margin: .4375em 0 0;
+	font-size: 3.8rem;
+	font-weight: bold;
+	line-height: 1.2;
+}
+
+.site-title a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.site-description {
+	margin: .4375em 0 0;
+	font-size: 90%;
+	font-weight: inherit;
+	line-height: 1.4;
+	word-wrap: break-word;
+  color: var(--gray);
+}
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+
+blockquote, q {
+  quotes: "" "";
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: "";
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin: 0 1.5em 1.5em;
+}
+
+figure {
+  margin: 1em 0;
+  /* Extra wide images within figure tags don't overflow the content area. */
+}
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+.main-navigation {
+	clear: both;
+	display: block;
+  margin: 0 auto;
+	max-width: var(--max-text-width);
+  text-align: center;
+}
+
+.main-navigation ul {
+	display: none;
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+}
+
+.main-navigation ul ul {
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	float: left;
+	position: absolute;
+	top: 100%;
+	left: -999em;
+	z-index: 99999;
+  text-align: left;
+}
+
+.main-navigation ul ul ul {
+	left: -999em;
+	top: 0;
+}
+
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+	left: 100%;
+}
+
+.main-navigation ul ul a {
+	width: 200px;
+}
+
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+  display: block;
+	left: auto;
+}
+
+.main-navigation li {
+	position: relative;
+}
+
+.main-navigation a {
+	display: block;
+	text-decoration: none;
+}
+
+.menu-toggle {
+/*  padding: 1em;
+*/}
+
+@media screen and (max-width: 37.5em) {
+	/* Small menu. */
+
+	.menu-toggle,
+	.main-navigation.toggled ul {
+		display: block;
+    margin: 0 auto;
+    position: fixed;
+    top:3rem;
+    right: 1rem;
+    z-index: 100;
+	}
+
+  .menu-toggle {
+    background: var(--light);
+  }
+
+  .main-navigation.toggled ul {
+    margin-top: 5rem;
+    background-color: var(--white);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+  }
+
+  .main-navigation a {
+    min-height: 4rem;
+  }
+
+}
+
+@media screen and (min-width: 37.5em) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .main-navigation a {
+    padding: 0 .5em;
+  }
+}
+
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.post-navigation {
+  border-bottom: 1px solid var(--gray);
+	margin: 0 auto 60px;
+  max-width: var(--max-text-width);
+	overflow: hidden;
+  padding-bottom: 60px;
+}
+
+.nav-links {
+	display: flex;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+	width: 50%;
+	flex: 1 0 50%;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	text-align: end;
+	flex: 1 0 50%;
+}
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  word-wrap: normal !important;
+  /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#primary[tabindex="-1"]:focus {
+  outline: 0;
+}
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+
+.alignleft,
+.alignright {
+	max-width: var(--max-text-width) !important;	/* Let's work to make this !important unnecessary */
+}
+
+.alignleft img,
+.alignright img,
+.alignleft figcaption,
+.alignright figcaption {
+	max-width: 50%;
+	width: 50%;
+}
+
+.alignleft figcaption {
+	clear: left;
+}
+
+.alignright figcaption {
+	clear: right;
+}
+
+.alignleft img,
+.alignleft figcaption {
+  float: left;
+  margin-right: 1.5em;
+}
+
+.alignright img,
+.alignright figcaption {
+  float: right;
+  margin-left: 1.5em;
+}
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+.widget-area {
+	width: 25%;
+}
+
+.widget {
+  margin: 0 0 1.5em;
+  /* Make sure select elements fit in widgets. */
+}
+
+.widget select {
+  max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+#page {
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.site-branding {
+  text-align: center;
+  margin: 60px 0;
+}
+
+.site-branding > p:last-child {
+  margin-bottom: 3rem;
+}
+
+/* Large screens */
+@media screen and (min-width: 37.5em) {
+  .site-branding {
+    margin-bottom: 1rem;
+  }
+}
+
+.site-branding img, .custom-logo {
+  height: 10rem;
+  object-fit: contain;
+  color: var(--dark);
+}
+
+.site-footer {
+  margin: 1em 0;
+  font-size: 90%;
+}
+
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+.sticky {
+  display: block;
+}
+
+.hentry {
+  margin: 60px 0;
+}
+
+.updated:not(.published) {
+  display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+  margin: 1.5em 0 0;
+}
+
+.entry-meta {
+  font-size: 90%;
+}
+
+.entry-title > a {
+  text-decoration: none;
+}
+
+.page-links {
+  clear: both;
+  margin: 0 0 1.5em;
+}
+
+.entry-header,
+.archive-header,
+.page-header,
+.entry-footer,
+.site-info,
+.posts-navigation,
+.post-navigation,
+.page-navigation,
+.comments-area,
+.not-found .page-content,
+.search .entry-summary {
+  margin: 1.5em auto;
+  padding-left: 14px;
+  padding-right: 14px;
+  max-width: var(--max-text-width);
+}
+
+.entry-header .wp-post-image {
+  margin-bottom: 0;
+  max-height: 350px;
+  object-fit: cover;
+}
+
+.entry-footer span{
+  margin-right: 1em;
+}
+
+.entry-footer{
+  font-size: 85%;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--gray);
+  color: var(--gray);
+}
+
+@media screen and (min-width: 608px) {
+  .entry-header,
+  .archive-header,
+  .page-header,
+  .entry-footer,
+  .site-info,
+  .posts-navigation,
+  .post-navigation,
+  .page-navigation,
+  .comments-area,
+  .not-found .page-content,
+  .search .entry-summary {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+.comment-content a {
+  word-wrap: break-word;
+}
+
+.bypostauthor {
+  display: block;
+}
+
+.comment-metadata {
+  color: var(--gray);
+}
+
+.comment-meta > .comment-author {
+  display: flex;
+}
+
+.comment-meta > .comment-author > img {
+  margin-right: 1rem;
+}
+.comment-meta > .comment-author > .says {
+  margin-left: 0.5rem;
+}
+
+.comment, .review {
+  margin-top:2rem;
+}
+
+.comment-reply-title a {
+  margin-left:1rem;
+}
+
+.pingback {
+  font-size: 75%;
+  color: var(--gray);
+  list-style: none;
+}
+
+.comment-form > * {
+  margin-bottom: 0;
+}
+
+.comment-form-comment > textarea {
+  width: 100%;
+}
+
+.wp-block-latest-comments li.wp-block-latest-comments__comment {
+  margin-left: 0;
+}
+
+.logged-in-as {
+  color: var(--gray);
+}
+
+.comment-form-cookies-consent {
+  display: flex;
+}
+
+.comment-form-cookies-consent > label {
+  flex: 1;
+}
+
+li.comment {
+  list-style: none;
+}
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .posts-navigation,
+.infinite-scroll.neverending .site-footer {
+  /* Theme Footer (when set to scrolling) */
+  display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+.infinity-end.neverending .site-footer {
+  display: block;
+}
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+  border: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+  max-width: 100%;
+}
+
+/* Make sure logo link wraps around logo image. */
+.custom-logo-link {
+  display: inline-block;
+}
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+.wp-caption {
+  margin-bottom: 1.5em;
+  max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+  margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+  text-align: center;
+}
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+.gallery {
+  margin-bottom: 1.5em;
+}
+
+.gallery-item {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+  max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+  max-width: 33.3333333333%;
+}
+
+.gallery-columns-4 .gallery-item {
+  max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+  max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+  max-width: 16.6666666667%;
+}
+
+.gallery-columns-7 .gallery-item {
+  max-width: 14.2857142857%;
+}
+
+.gallery-columns-8 .gallery-item {
+  max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+  max-width: 11.1111111111%;
+}
+
+.gallery-caption {
+  display: block;
+}
+
+.blocks-gallery-caption {
+  margin: 0 auto;
+}
+
+.form-row {
+  clear: none;
+}
+
+@media print {
+  .edit-link, .navigation, nav, .main-navigation, .comment-respond, .reply, .site-info, .pingback, form.cart {
+    display:none;
+  }
+}
+
+/* WooCommerce */
+
+.product_meta {
+  color: var(--gray);
+}
+
+body.woocommerce-checkout .custom-logo-link, body.woocommerce-checkout .site-description, body.woocommerce-checkout .main-navigation,
+body.woocommerce-cart .custom-logo-link, body.woocommerce-cart .site-description, body.woocommerce-cart .main-navigation
+ {
+  display: none;
+}
+
+ .select2-container--default .select2-selection--single {
+  background-color: var(--white);
+  height: 3.8rem;
+  padding: 0.6rem 1rem;
+  background-color: var(--white);
+  border: 1px solid #d1d1d1;
+  border-radius: var(--border-radius);
+ }
+
+ .select2-container .select2-selection--single .select2-selection__rendered {
+  padding-left: 0;
+  line-height: 1.3;
+ }
+
+ .select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 3.8rem;
+ }
+
+span.select2-dropdown {
+  background-color: var(--light);
+}
+
+.select2-container--default .select2-results__option[aria-selected=true], .select2-container--default .select2-results__option[data-selected=true] {
+    background-color: var(--secondary);
+}
+
+.woocommerce-shipping-fields > h3 > label {
+/*  font-size: 85%;
+*/  font-weight: inherit;
+}
+
