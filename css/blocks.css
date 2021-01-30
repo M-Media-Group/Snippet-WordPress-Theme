@@ -361,6 +361,10 @@ figure.wp-block-pullquote {
   padding: .5em;
 }
 
+.wp-block-table.is-style-stripes tbody tr:nth-child(2n+1) {
+    background-color: var(--white);
+}
+
 @media screen and (min-width: 608px) {
   .wp-block-table {
     margin-left: auto;

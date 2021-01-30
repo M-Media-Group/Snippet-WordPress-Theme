@@ -40,6 +40,6 @@ There are a few optional settings available in the `Appearance > Theme Options` 
 
 == Credits ==
 
-* Based on Snippet CSS https://github.com/M-Media-Group/Snippet-CSS, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
-* Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+* Based on Snippet CSS https://github.com/M-Media-Group/Snippet-CSS, (C) 2012-2017 M Media, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+* Based on Underscores http://underscores.me/, (C) 2012-2017 M Media, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)

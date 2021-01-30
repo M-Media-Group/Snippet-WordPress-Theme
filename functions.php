@@ -96,7 +96,10 @@ if (!function_exists('m_media_snippet_theme_setup')):
             ),
         ));
 
-        // add_theme_support('woocommerce');
+        add_theme_support('woocommerce');
+        add_theme_support('wc-product-gallery-zoom');
+        add_theme_support('wc-product-gallery-lightbox');
+        add_theme_support('wc-product-gallery-slider');
 
 /* set default theme colors */
         $background_color = 'f9f9f9';
@@ -262,8 +265,23 @@ function jk_dequeue_styles($enqueue_styles)
 {
     unset($enqueue_styles['woocommerce-general']); // Remove the gloss
     // unset($enqueue_styles['woocommerce-layout']); // Remove the layout
-    unset($enqueue_styles['woocommerce-smallscreen']); // Remove the smallscreen optimisation
+    // unset($enqueue_styles['woocommerce-smallscreen']); // Remove the smallscreen optimisation
     return $enqueue_styles;
+}
+
+remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+add_action('woocommerce_before_main_content', 'm_media_snippet_theme_wrapper_start', 10);
+add_action('woocommerce_after_main_content', 'm_media_snippet_theme_wrapper_end', 10);
+
+function m_media_snippet_theme_wrapper_start()
+{
+    echo '<main id="main" class="site-main container" role="main">';
+}
+
+function m_media_snippet_theme_wrapper_end()
+{
+    echo '</main>';
 }
 
 /**

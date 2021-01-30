@@ -32,14 +32,14 @@ function m_media_snippet_theme_search_form($form)
 {
     return '<form role="search" method="get" class="search-form row" action="' . home_url(' / ') . '">
     <label class="ten columns">
-        <span class="screen-reader-text">' . _x('Search for:', 'label') . '</span>
+        <span class="screen-reader-text">' . _x('Search for:', 'label', 'm-media-snippet-theme') . '</span>
         <input type="search" class="search-field"
-            placeholder="' . esc_attr_x('Search …', 'placeholder') . '"
+            placeholder="' . esc_attr_x('Search …', 'placeholder', 'm-media-snippet-theme') . '"
             value="' . get_search_query() . '" name="s"
-            title="' . esc_attr_x('Search for:', 'label') . '" />
+            title="' . esc_attr_x('Search for:', 'label', 'm-media-snippet-theme') . '" />
     </label>
     <input type="submit" class="search-submit button button-primary two columns"
-        value="' . esc_attr_x('Search', 'submit button') . '" />
+        value="' . esc_attr_x('Search', 'submit button', 'm-media-snippet-theme') . '" />
 </form>';
 }
 add_filter('get_search_form', 'm_media_snippet_theme_search_form');

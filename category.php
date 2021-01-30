@@ -44,10 +44,8 @@ while (have_posts()):
 
 endwhile;
 // Previous/next page navigation.
-the_post_navigation(array(
-    'prev_text' => '&larr; %title',
-    'next_text' => '%title &rarr;',
-));
+the_posts_navigation();
+
 else:
     // If no content, include the "No posts found" template.
     get_template_part('template-parts/content', get_post_type());

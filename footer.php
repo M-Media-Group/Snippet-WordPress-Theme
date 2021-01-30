@@ -20,7 +20,7 @@ printf(esc_html__('Proudly powered by %s', 'm-media-snippet-theme'), 'M Media');
 		<span class="sep"> | </span>
 		<?php
 /* translators: 1: Theme name, 2: Theme author. */
-printf(esc_html__('Theme: %s', 'm-media-snippet-theme'), '<a href="https://github.com/M-Media-Group/">Snippet</a>');
+printf(esc_html__('Theme: %s', 'm-media-snippet-theme'), '<a href="https://github.com/M-Media-Group/Snippet-WordPress-Theme">Snippet</a>');
 ?>
 	</div><!-- .site-info -->
 </footer><!-- #colophon -->

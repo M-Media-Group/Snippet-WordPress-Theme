@@ -4,7 +4,9 @@ Theme URI: https://github.com/M-Media-Group/Snippet-WordPress-Theme
 Author: mmediagroup
 Author URI: https://mediagroup.fr
 Description: A simple theme for testing Snippet.
-Version: 0.0.1
+Version: 0.0.2
+Tested up to: 5.6
+Requires PHP: 5.2.4
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: m-media-snippet-theme
@@ -14,7 +16,7 @@ GitHub Theme URI: https://github.com/M-Media-Group/Snippet-WordPress-Theme
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-m-media-snippet-theme is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+m-media-snippet-theme is based on Underscores http://underscores.me/, (C) 2012-2016 M Media, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
@@ -421,7 +423,7 @@ big {
   font-size: 125%;
 }
 
-.archive .site-header {
+.archive .site-header, .woocommerce .site-header {
 	margin-bottom: 3.5em;
 }
 
@@ -500,6 +502,7 @@ figure {
 	left: -999em;
 	z-index: 99999;
   text-align: left;
+  background-color: var(--white);
 }
 
 .main-navigation ul ul ul {
@@ -580,8 +583,8 @@ figure {
   }
 }
 
-.site-main .comment-navigation,
-.site-main .posts-navigation,
+.comment-navigation,
+.posts-navigation,
 .post-navigation {
   border-bottom: 1px solid var(--gray);
 	margin: 0 auto 60px;
@@ -894,7 +897,7 @@ figure {
   flex: 1;
 }
 
-li.comment {
+li.comment, li.review {
   list-style: none;
 }
 /*--------------------------------------------------------------
@@ -1029,7 +1032,7 @@ object {
 }
 
 body.woocommerce-checkout .custom-logo-link, body.woocommerce-checkout .site-description, body.woocommerce-checkout .main-navigation,
-body.woocommerce-cart .custom-logo-link, body.woocommerce-cart .site-description, body.woocommerce-cart .main-navigation
+ body.woocommerce-cart .site-description, body.woocommerce-cart .main-navigation
  {
   display: none;
 }
@@ -1065,3 +1068,154 @@ span.select2-dropdown {
 */  font-weight: inherit;
 }
 
+.woocommerce-LoopProduct-link.woocommerce-loop-product__link, .product {
+  position: relative;
+  text-decoration: none;
+}
+
+.woocommerce-LoopProduct-link.woocommerce-loop-product__link+.button {
+  margin-top: 1rem;
+  display: table;
+}
+
+.woocommerce span.onsale {
+    min-height: 3.236em;
+    min-width: 3.236em;
+    padding: .202em;
+    font-size: 1em;
+    font-weight: 700;
+    position: absolute;
+    text-align: center;
+    line-height: 3.236;
+    top: -.5em;
+    left: -.5em;
+    margin: 0;
+    border-radius: 100%;
+    background-color: var(--primary);
+    color: #fff;
+    font-size: .857em;
+    z-index: 9;
+}
+
+.products, .tabs.wc-tabs {
+  margin-left: auto;
+  margin-right: auto;
+}
+.tabs.wc-tabs {
+  text-align: center;
+}
+
+.tabs.wc-tabs > li {
+  color: var(--gray);
+}
+
+.tabs.wc-tabs > li.active {
+  color: var(--dark);
+}
+
+.woocommerce:not(.single-product) ul.products {
+  max-width: 100%;
+}
+
+ul.products {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+li.product {
+  list-style: none;
+  flex: none;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.woocommerce div.product div.images.woocommerce-product-gallery {
+    position: relative;
+}
+
+.woocommerce div.product div.images .woocommerce-product-gallery__trigger {
+    position: absolute;
+    top: .5em;
+    right: .5em;
+    font-size: 2em;
+    z-index: 9;
+    width: 36px;
+    height: 36px;
+    background: var(--white);
+    text-indent: -9999px;
+    border-radius: 100%;
+    box-sizing: content-box;
+    z-index: 10;
+}
+
+.woocommerce div.product div.images .woocommerce-product-gallery__trigger::before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border: 2px solid var(--black);
+    border-radius: 100%;
+    position: absolute;
+    top: 9px;
+    left: 9px;
+    box-sizing: content-box;
+}
+
+.woocommerce div.product div.images .woocommerce-product-gallery__trigger::after {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 8px;
+    background: var(--black);
+    border-radius: 6px;
+    position: absolute;
+    top: 19px;
+    left: 22px;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    box-sizing: content-box;
+}
+
+.woocommerce-loop-product__title {
+  font-size: 2.4rem;
+  margin-top: 1rem;
+}
+
+.related.products > h2 {
+  margin: 3.6rem auto;
+}
+
+.button.single_add_to_cart_button, .button.checkout-button, #place_order.button, .comment-form .submit, .wp-block-search__button {
+  color: var(--primary-text-contrast);
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+#place_order.button {
+  width: 100%;
+}
+
+.button.single_add_to_cart_button:hover, .button.checkout-button:hover, #place_order.button:hover .comment-form .submit:hover, .wp-block-search__button:hover {
+  color: var(--primary-text-contrast);
+  background-color: var(--primary-darker);
+  border-color: var(--primary-darker);
+}
+
+.woocommerce .container > .woocommerce-notices-wrapper {
+  padding: 3.6rem auto;
+}
+
+ .woocommerce-shipping-fields > h3#ship-to-different-address {
+    margin-bottom: 3rem;
+    font-size: inherit;
+ }
+
+ .price > del {
+  opacity: 0.5;
+ }
+
+ .price > ins {
+  background: none;
+ }

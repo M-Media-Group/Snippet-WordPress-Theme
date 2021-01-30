@@ -15,25 +15,25 @@ if (is_singular()):
     if (has_post_thumbnail()):
         echo '<header class="entry-header u-fullscreen-width">';
         ?>
-							<div class="wp-block-cover alignfull has-background-dim" style="background-image:url(<?php echo get_the_post_thumbnail_url(); ?>);background-position:94% 30%;min-height:500px"><div class="wp-block-cover__inner-container">
+															<div class="wp-block-cover alignfull has-background-dim" style="background-image:url(<?php echo get_the_post_thumbnail_url(); ?>);background-position:94% 30%;min-height:500px"><div class="wp-block-cover__inner-container">
 
-							<?php the_title('<h1 class="entry-title u-center-text">', '</h1>');
+															<?php the_title('<h1 class="entry-title u-center-text">', '</h1>');
         if ('post' === get_post_type()):
             echo '<div class="entry-meta u-center-text">';
             m_media_snippet_theme_posted_on();
             echo '</div>';
         endif;?>
 
-					</div></div>
-					<?php
+													</div></div>
+													<?php
     else:
         echo '<header class="entry-header">';
         the_title('<h1 class="entry-title">', '</h1>');
         if ('post' === get_post_type()): ?>
-						<div class="entry-meta">
-						<?php m_media_snippet_theme_posted_on();?>
-						</div><!-- .entry-meta -->
-						<?php
+														<div class="entry-meta">
+														<?php m_media_snippet_theme_posted_on();?>
+														</div><!-- .entry-meta -->
+														<?php
     endif;
 endif;
 else:
@@ -69,12 +69,6 @@ if (is_singular()) {
     ));
 } else {
     the_excerpt(); // Echo the excerpt directly.
-    $excerpt = get_the_excerpt(); // Store the excerpt in $excerpt.
-
-// Retrieve the "raw" exceprt - this has not passed any filters etc,
-    // and instead comes directly from the database.
-    $post = get_post();
-    echo $post->post_excerpt;
 }
 
 wp_link_pages(array(

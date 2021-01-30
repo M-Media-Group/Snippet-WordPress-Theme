@@ -1,4 +1,4 @@
-# Copyright (C) 2017 Automattic
+# Copyright (C) 2017 M Media
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
@@ -140,23 +140,21 @@ msgid "_s"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "http://underscores.me/"
+msgid "https://mmediagroup.fr/"
 msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Hi. I'm a starter theme called <code>_s</code>, or <em>underscores</em>, if "
-"you like. I'm a theme meant for hacking so don't use me as a <em>Parent "
-"Theme</em>. Instead try turning me into the next, most awesome, WordPress "
-"theme out there. That's what I'm here for."
+"Hi. I'm a theme called Snippet."
+"I'm based on the excellent Snippet CSS framework."
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "Automattic"
+msgid "M Media"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://automattic.com/"
+msgid "https://mmediagroup.fr/"
 msgstr ""
 
 #: comments.php:40

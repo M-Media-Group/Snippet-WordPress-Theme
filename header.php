@@ -20,6 +20,7 @@
 </head>
 
 <body <?php body_class();?>>
+<?php wp_body_open();?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'm-media-snippet-theme');?></a>
 		<header id="masthead" class="site-header">
@@ -35,7 +36,7 @@ endif;
 
 $description = get_bloginfo('description', 'display');
 if ($description || is_customize_preview()): ?>
-					<p class="site-description u-center"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+					<p class="site-description u-center"><?php echo esc_html($description); /* WPCS: xss ok. */ ?></p>
 				<?php
 endif;?>
 			</div><!-- .site-branding -->
