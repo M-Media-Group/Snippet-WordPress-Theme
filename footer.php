@@ -13,15 +13,23 @@
 
 <footer id="colophon" class="site-footer">
 	<div class="site-info">
-		<a href="<?php echo esc_url(__('https://mmediagroup.fr/', 'm-media-snippet-theme')); ?>"><?php
-/* translators: %s: CMS name, i.e. WordPress. */
-printf(esc_html__('Proudly powered by %s', 'm-media-snippet-theme'), 'M Media');
-?></a>
+		&copy;
+		<?php
+echo date_i18n(
+    /* translators: Copyright date format, see https://www.php.net/manual/datetime.format.php */
+    _x('Y', 'copyright date format', 'm-media-snippet-theme')
+);
+?>
+		<a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name');?></a>
+<?php if (get_option('m-media-snippet-theme-attribute-theme-author') == 1) {
+    ?>
 		<span class="sep"> | </span>
 		<?php
 /* translators: 1: Theme name, 2: Theme author. */
-printf(esc_html__('Theme: %s', 'm-media-snippet-theme'), '<a href="https://github.com/M-Media-Group/Snippet-WordPress-Theme">Snippet</a>');
-?>
+    printf(esc_html__('Theme: %s', 'm-media-snippet-theme'), '<a href="https://github.com/M-Media-Group/Snippet-WordPress-Theme">Snippet by M Media</a>');
+}?>
+		<span class="sep"> | </span>
+<?php echo get_the_privacy_policy_link(); ?>
 	</div><!-- .site-info -->
 </footer><!-- #colophon -->
 </div><!-- #page -->

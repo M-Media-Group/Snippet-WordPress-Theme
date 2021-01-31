@@ -26,6 +26,7 @@ function m_media_snippet_theme_options()
     register_setting('m-media-snippet-theme-options', 'm-media-snippet-theme-wp-block-styles', array('default' => 1));
     register_setting('m-media-snippet-theme-options', 'm-media-snippet-theme-dark-mode', array('default' => 1));
     register_setting('m-media-snippet-theme-options', 'm-media-snippet-theme-responsive-embeds', array('default' => 1));
+    register_setting('m-media-snippet-theme-options', 'm-media-snippet-theme-attribute-theme-author', array('default' => 0));
 }
 
 /**
@@ -65,6 +66,14 @@ function m_media_snippet_theme_options_page()
 							<input name="m-media-snippet-theme-responsive-embeds" type="checkbox" value="1" <?php checked('1', get_option('m-media-snippet-theme-responsive-embeds'));?> />
 							<?php _e('Enable responsive embedded content.', 'm-media-snippet-theme');?>
 							(<a href="https://developer.wordpress.org/block-editor/developers/themes/theme-support/#responsive-embedded-content"><code>responsive-embeds</code></a>)
+						</label>
+					</td>
+				</tr>
+				<tr valign="top">
+					<td>
+						<label>
+							<input name="m-media-snippet-theme-attribute-theme-author" type="checkbox" value="1" <?php checked('1', get_option('m-media-snippet-theme-attribute-theme-author'));?> />
+							<?php _e('Attribute the theme author in the footer.', 'm-media-snippet-theme');?>
 						</label>
 					</td>
 				</tr>

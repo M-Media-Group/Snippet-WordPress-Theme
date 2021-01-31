@@ -284,6 +284,23 @@ function m_media_snippet_theme_wrapper_end()
     echo '</main>';
 }
 
+function m_media_snippet_theme_filter_nav_menu($menu, $args)
+{
+    if (is_page_template('page_full-screen.php')) {
+        $menu = null;
+    }
+
+    return $menu;
+}
+add_filter('wp_nav_menu', 'm_media_snippet_theme_filter_nav_menu', 10, 2);
+
+/**
+ * Add "… Continued" to the excerpt
+ */
+add_filter('excerpt_more', function () {
+    return '&hellip; <a href="' . get_permalink() . '">' . __('continue reading', 'm-media-snippet-theme') . '</a>';
+});
+
 /**
  * Implement the Custom Header feature.
  */

@@ -4,7 +4,7 @@ Theme URI: https://github.com/M-Media-Group/Snippet-WordPress-Theme
 Author: mmediagroup
 Author URI: https://mediagroup.fr
 Description: A simple theme for testing Snippet.
-Version: 0.0.2
+Version: 0.0.3
 Tested up to: 5.6
 Requires PHP: 5.2.4
 License: GNU General Public License v2 or later
@@ -833,6 +833,10 @@ figure {
   }
 }
 
+.entry-content.clean-page, .entry-content.clean-page > div:first-child {
+  margin-top: 0;
+}
+
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
@@ -1187,7 +1191,7 @@ li.product {
   margin: 3.6rem auto;
 }
 
-.button.single_add_to_cart_button, .button.checkout-button, #place_order.button, .comment-form .submit, .wp-block-search__button {
+.button.single_add_to_cart_button, .button.checkout-button, #place_order.button, .comment-form .submit, .wp-block-search__button, .elementor-button-wrapper > .elementor-button {
   color: var(--primary-text-contrast);
   background-color: var(--primary);
   border-color: var(--primary);
@@ -1197,7 +1201,7 @@ li.product {
   width: 100%;
 }
 
-.button.single_add_to_cart_button:hover, .button.checkout-button:hover, #place_order.button:hover .comment-form .submit:hover, .wp-block-search__button:hover {
+.button.single_add_to_cart_button:hover, .button.checkout-button:hover, #place_order.button:hover .comment-form .submit:hover, .wp-block-search__button:hover, .elementor-button-wrapper > .elementor-button:hover {
   color: var(--primary-text-contrast);
   background-color: var(--primary-darker);
   border-color: var(--primary-darker);

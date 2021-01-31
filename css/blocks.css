@@ -123,6 +123,10 @@
   margin: 0 auto;
 }
 
+.wp-block-gallery {
+  flex-direction: column;
+}
+
 /*--------------------------------------------------------------
 ## Group
 --------------------------------------------------------------*/
@@ -208,6 +212,10 @@ ul.wp-block-latest-posts > li {
 .wp-block-latest-posts__featured-image  {
 float: left;
 margin-right: 2rem;
+}
+
+.wp-block-latest-posts__post-author, .wp-block-latest-posts__post-date {
+    color: var(--gray);
 }
 
 /*--------------------------------------------------------------
@@ -451,6 +459,11 @@ figure.wp-block-pullquote {
   line-height: 3.7rem;
   letter-spacing: .1rem;
   text-decoration: none;
+}
+
+.is-style-outline > .wp-block-button__link:not(.has-text-color), .wp-block-button__link.is-style-outline:not(.has-text-color) {
+  color: var(--dark);
+  border-color: var(--dark);
 }
 
 /* Yoast */

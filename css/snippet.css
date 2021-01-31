@@ -274,6 +274,7 @@ h6 {
   margin-bottom: 1rem;
   font-weight: 300;
   max-width: var(--max-text-width);
+  word-break: break-word;
 }
 
 h1 {
@@ -474,7 +475,7 @@ select {
   -moz-appearance: none;
   appearance: none;
   display: inline-block;
-  color: inherit;
+  color: var(--dark);
   background-color: var(--white);
   border: 1px solid var(--gray);
   border-radius: var(--border-radius);
