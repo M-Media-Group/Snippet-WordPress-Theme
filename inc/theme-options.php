@@ -73,7 +73,7 @@ function m_media_snippet_theme_options_page()
 					<td>
 						<label>
 							<input name="m-media-snippet-theme-attribute-theme-author" type="checkbox" value="1" <?php checked('1', get_option('m-media-snippet-theme-attribute-theme-author'));?> />
-							<?php _e('Attribute the theme author in the footer.', 'm-media-snippet-theme');?>
+							<?php _e('Attribute the theme author in the footer', 'm-media-snippet-theme');?>
 						</label>
 					</td>
 				</tr>
@@ -89,14 +89,18 @@ function m_media_snippet_theme_options_page()
  */
 function m_media_snippet_theme_enable_dark_mode()
 {
-    if (get_option('m-media-snippet-theme-dark-mode') == 1) {
+    // Add support for editor styles.
+    add_theme_support('editor-styles');
 
-        // Add support for editor styles.
-        add_theme_support('editor-styles');
-        add_editor_style('style-editor-dark.css');
+    // add_editor_style('css/snippet.css');
+    add_editor_style('css/blocks.css');
+
+    if (get_option('m-media-snippet-theme-dark-mode') == 1) {
 
         // Add support for dark styles.
         add_theme_support('dark-editor-style');
+        add_editor_style('style-editor-dark.css');
+
     }
 }
 // add_action('after_setup_theme', 'm_media_snippet_theme_enable_dark_mode');
