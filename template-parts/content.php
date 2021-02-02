@@ -15,25 +15,35 @@ if (is_singular()):
     if (has_post_thumbnail()):
         echo '<header class="entry-header u-fullscreen-width">';
         ?>
-															<div class="wp-block-cover alignfull has-background-dim" style="background-image:url(<?php echo get_the_post_thumbnail_url(); ?>);background-position:94% 30%;min-height:500px"><div class="wp-block-cover__inner-container">
+				<div id="header_image" class="wp-block-cover alignfull has-background-dim bg-blur" style="background-image:url(<?php echo get_the_post_thumbnail_url(); ?>);background-position:94% 30%;min-height:68vh;height: 500px;"><div class="wp-block-cover__inner-container">
 
-															<?php the_title('<h1 class="entry-title u-center-text">', '</h1>');
+				<?php the_title('<h1 class="entry-title u-center-text">', '</h1>');
         if ('post' === get_post_type()):
             echo '<div class="entry-meta u-center-text">';
             m_media_snippet_theme_posted_on();
             echo '</div>';
         endif;?>
 
-													</div></div>
-													<?php
+				</div>
+
+				<div class="unblur-prompt">
+				<div class="dot-wrapper">
+				<div class="dot-1"></div>
+				<div class="dot-2"></div>
+				</div>
+				<small class="text-muted">Click and hold to see image</small>
+				</div>
+
+				</div>
+				<?php
     else:
         echo '<header class="entry-header">';
         the_title('<h1 class="entry-title">', '</h1>');
         if ('post' === get_post_type()): ?>
-														<div class="entry-meta">
-														<?php m_media_snippet_theme_posted_on();?>
-														</div><!-- .entry-meta -->
-														<?php
+				<div class="entry-meta">
+				<?php m_media_snippet_theme_posted_on();?>
+				</div><!-- .entry-meta -->
+				<?php
     endif;
 endif;
 else:

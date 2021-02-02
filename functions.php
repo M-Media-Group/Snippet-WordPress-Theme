@@ -220,11 +220,12 @@ function m_media_snippet_theme_fonts_url()
 
     if ('off' !== $roboto) {
         $font_families = array();
-        $font_families[] = 'Roboto:400,500,500i,700,900';
+        $font_families[] = 'Roboto:300,400,500,500i,700,900';
 
         $query_args = array(
             'family' => urlencode(implode('|', $font_families)),
             'subset' => urlencode('latin,latin-ext'),
+            'display' => 'swap',
         );
 
         $fonts_url = add_query_arg($query_args, 'https://fonts.googleapis.com/css');
@@ -248,6 +249,8 @@ function m_media_snippet_theme_scripts()
     wp_enqueue_style('m-media-snippet-theme-fonts', m_media_snippet_theme_fonts_url());
 
     wp_enqueue_script('m-media-snippet-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true);
+
+    wp_enqueue_script('m-media-snippet-theme-unblur-header', get_template_directory_uri() . '/js/unblur-header.js', array(), '20151215', true);
 
     wp_enqueue_script('m-media-snippet-theme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true);
 
@@ -300,6 +303,21 @@ add_filter('wp_nav_menu', 'm_media_snippet_theme_filter_nav_menu', 10, 2);
 add_filter('excerpt_more', function () {
     return '&hellip; <a href="' . get_permalink() . '">' . __('continue reading', 'm-media-snippet-theme') . '</a>';
 });
+
+// Exclude pingbacks from comment count
+function m_media_snippet_theme_comment_count($count)
+{
+    global $id;
+    $comment_count = 0;
+    $comments = get_approved_comments($id);
+    foreach ($comments as $comment) {
+        if ($comment->comment_type === 'comment') {
+            $comment_count++;
+        }
+    }
+    return $comment_count;
+}
+add_filter('get_comments_number', 'm_media_snippet_theme_comment_count', 0);
 
 /**
  * Implement the Custom Header feature.

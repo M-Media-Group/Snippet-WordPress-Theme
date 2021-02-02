@@ -94,6 +94,87 @@
   }
 }
 
+.bg-blur.wp-block-cover.has-background-dim:not(.has-background-gradient)::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    opacity: .5;
+    -webkit-backdrop-filter: blur(1.5rem) brightness(90%);
+    backdrop-filter: blur(1.5rem) brightness(90%);
+    content: "";
+    display: block;
+    background-color: transparent;
+    opacity: 1;
+}
+
+.bg-blur.wp-block-cover.has-background-dim:not(.has-background-gradient), .bg-blur.wp-block-cover.has-background-dim:not(.has-background-gradient) > div {
+    transition: 1s;
+}
+
+div.unblur-prompt {
+    position: absolute;
+    bottom: 3rem;
+    left: 3rem;
+    z-index: 9;
+    display: flex;
+}
+
+.dot-wrapper + small {
+  margin-left:3rem;
+}
+
+.dot-wrapper {
+  position: relative;
+}
+
+.dot-1, .dot-2, .dot-3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+}
+.dot-1 {
+  -webkit-animation: ripple 3s ease-out 0s infinite;
+          animation: ripple 3s ease-out 0s infinite;
+}
+
+.dot-2 {
+  -webkit-animation: ripple 3s ease-out 1s infinite;
+          animation: ripple 3s ease-out 1s infinite;
+}
+
+@-webkit-keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(8, 8);
+    background: var(--gray);
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(8, 8);
+    background: var(--gray);
+  }
+}
+
 /*--------------------------------------------------------------
 ## Embeds
 --------------------------------------------------------------*/
