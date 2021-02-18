@@ -1,0 +1,46 @@
+
+:root {
+  --primary: #eb4647;
+  --primary-darker: #dc1819;
+  --primary-text-contrast: #f3f3f3;
+  --secondary: #246eb9;
+  --secondary-darker: #1d5894;
+  --secondary-text-contrast: #f3f3f3;
+  --white: #fff;
+  --black: #131313;
+  --dark: #333;
+  --light: #f3f3f3;
+  --gray: #999;
+  --filter-darker: brightness(85%);
+  --filter-lighter: brightness(115%);
+  --link: var(--dark);
+  --link-darker: var(--black);
+  --border-radius: 1rem;
+  --box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.1);
+  /*Line length control for text*/
+  --max-text-width: 63rem;
+}
+
+/*--------------------------------------------------------------
+# Dark Mode Editor Styles
+--------------------------------------------------------------*/
+
+body {
+	font-family: Roboto,HelveticaNeue,Helvetica Neue,Helvetica,Arial,sans-serif !important;
+	background: var(--light);
+}
+
+/*--------------------------------------------------------------
+## Typography
+--------------------------------------------------------------*/
+
+body,
+.wp-block,
+.editor-post-title__block .editor-post-title__input,
+h1, h2, h3, h4, h5, h6 {
+  color: var(--dark);
+}
+
+abbr, acronym {
+  border-color: var(--gray);
+}

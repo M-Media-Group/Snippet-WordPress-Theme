@@ -1,12 +1,12 @@
 /*
-Theme Name: M Media Snippet Theme
+Theme Name: Snippet
 Theme URI: https://github.com/M-Media-Group/Snippet-WordPress-Theme
 Author: mmediagroup
 Author URI: https://mediagroup.fr
-Description: A simple theme for testing Snippet.
-Version: 0.0.6
-Tested up to: 5.6
-Requires PHP: 5.2.4
+Description: Snippet theme by M Media.
+Version: 1.0.0
+Tested up to: 5.7
+Requires PHP: 5.4
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: m-media-snippet-theme
@@ -839,6 +839,11 @@ figure {
 
 .entry-content.clean-page, .entry-content.clean-page > div:first-child {
   margin-top: 0;
+  width: 100%;
+}
+
+.clean-page > .elementor {
+  max-width: 100%;
 }
 
 /*--------------------------------------------------------------
@@ -937,7 +942,7 @@ li.comment, li.review {
 
 /* Make sure embeds and iframes fit their containers. */
 embed,
-iframe,
+.entry-content iframe,
 object {
   max-width: 100%;
   padding: 0;

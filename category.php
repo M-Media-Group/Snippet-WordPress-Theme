@@ -17,7 +17,7 @@ get_header();?>
 				<h1 class="archive-title">
 				<?php
 /* translators: %s: Category title. */
-printf(__('%s', 'm-media-snippet-theme'), single_cat_title('', false));
+printf('%s', single_cat_title('', false));
 ?>
 				</h1>
 

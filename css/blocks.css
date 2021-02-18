@@ -52,6 +52,11 @@
   max-width: 100%;
 }
 
+.alignwide .alignfull {
+  max-width: 100% !important;
+  left: auto !important;
+}
+
 @media screen and (min-width: 608px) {
   .entry-content > * {
     padding-left: 0px;
@@ -79,6 +84,9 @@
 /*--------------------------------------------------------------
 ## Cover
 --------------------------------------------------------------*/
+.wp-block-cover {
+  color: white;
+}
 
 .wp-block-cover+p {
   margin-top:3rem;
@@ -102,8 +110,8 @@
     right: 0;
     z-index: 0;
     opacity: .5;
-    -webkit-backdrop-filter: blur(1.5rem) brightness(90%);
-    backdrop-filter: blur(1.5rem) brightness(90%);
+    -webkit-backdrop-filter: blur(1.5rem) brightness(70%);
+    backdrop-filter: blur(1.5rem) brightness(70%);
     content: "";
     display: block;
     background-color: transparent;
@@ -118,19 +126,21 @@ div.unblur-prompt {
     position: absolute;
     bottom: 3rem;
     left: 3rem;
-    z-index: 9;
+    z-index: 1;
     display: flex;
+    color: white;
 }
 
 .dot-wrapper + small {
   margin-left:3rem;
+  opacity: 0.5;
 }
 
 .dot-wrapper {
   position: relative;
 }
 
-.dot-1, .dot-2, .dot-3 {
+.dot-1, .dot-2 {
   position: absolute;
   top: 0;
   left: 0;
@@ -159,7 +169,7 @@ div.unblur-prompt {
   100% {
     opacity: 0;
     transform: scale(8, 8);
-    background: var(--gray);
+    background: white;
   }
 }
 
@@ -171,7 +181,7 @@ div.unblur-prompt {
   100% {
     opacity: 0;
     transform: scale(8, 8);
-    background: var(--gray);
+    background: white;
   }
 }
 
@@ -239,6 +249,15 @@ div.unblur-prompt {
   max-width: calc( 100% + 60px );
   position: relative;
   left: -30px;
+}
+
+/*--------------------------------------------------------------
+# Media block
+--------------------------------------------------------------*/
+
+.wp-block-media-text, .wp-block-group > .wp-block-group__inner-container > .alignfull {
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /*--------------------------------------------------------------

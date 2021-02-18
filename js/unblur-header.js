@@ -24,6 +24,13 @@
 		element.children[0].style.opacity = null;
 	};
 
+	function cancel(event) {
+		document.body.style['-webkit-user-select'] = null;
+		clearTimeout(timer);
+		obscureBackground(element);
+	}
+
+	if(element !== null) {
 	  element.addEventListener('touchstart', (event) => {
 	    timer = setTimeout(() => {
 	      timer = null;
@@ -34,19 +41,15 @@
 	    }, 300);
 	  });
 
-	  function cancel(event) {
-		document.body.style['-webkit-user-select'] = null;
-	    clearTimeout(timer);
-	    obscureBackground(element);
-	  }
 
 	  element.addEventListener('touchend', cancel);
 	  element.addEventListener('touchmove', cancel);
 
 
-	// element.addEventListener('touchstart', exposeBackground, false);
-	element.addEventListener('mousedown', exposeBackground, false);
+		// element.addEventListener('touchstart', exposeBackground, false);
+		element.addEventListener('mousedown', exposeBackground, false);
 
-	// element.addEventListener('touchend', obscureBackground, false);
-	element.addEventListener('mouseup', obscureBackground, false);
+		// element.addEventListener('touchend', obscureBackground, false);
+		element.addEventListener('mouseup', obscureBackground, false);
+	}
 } )();

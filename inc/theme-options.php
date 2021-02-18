@@ -23,7 +23,6 @@ add_action('admin_menu', 'm_media_snippet_theme_add_options_page');
  */
 function m_media_snippet_theme_options()
 {
-    register_setting('m-media-snippet-theme-options', 'm-media-snippet-theme-wp-block-styles', array('default' => 1));
     register_setting('m-media-snippet-theme-options', 'm-media-snippet-theme-dark-mode', array('default' => 1));
     register_setting('m-media-snippet-theme-options', 'm-media-snippet-theme-responsive-embeds', array('default' => 1));
     register_setting('m-media-snippet-theme-options', 'm-media-snippet-theme-attribute-theme-author', array('default' => 0));
@@ -48,15 +47,6 @@ function m_media_snippet_theme_options_page()
 							<input name="m-media-snippet-theme-dark-mode" type="checkbox" value="1" <?php checked('1', get_option('m-media-snippet-theme-dark-mode'));?> />
 							<?php _e('Enable a dark theme style.', 'm-media-snippet-theme');?>
 							(<a href="https://developer.wordpress.org/block-editor/developers/themes/theme-support/#dark-backgrounds"><code>dark-editor-style</code></a>)
-						</label>
-					</td>
-				</tr>
-				<tr valign="top">
-					<td>
-						<label>
-							<input name="m-media-snippet-theme-wp-block-styles" type="checkbox" value="1" <?php checked('1', get_option('m-media-snippet-theme-wp-block-styles'));?> />
-							<?php _e('Enable core block styles on the front end.', 'm-media-snippet-theme');?>
-							(<a href="https://developer.wordpress.org/block-editor/developers/themes/theme-support/#default-block-styles"><code>wp-block-styles</code></a>)
 						</label>
 					</td>
 				</tr>
@@ -93,17 +83,18 @@ function m_media_snippet_theme_enable_dark_mode()
     add_theme_support('editor-styles');
 
     // add_editor_style('css/snippet.css');
-    add_editor_style('css/blocks.css');
+    // add_editor_style('style.css');
+    // add_editor_style('css/blocks.css');
+    add_editor_style('style-editor.css');
 
     if (get_option('m-media-snippet-theme-dark-mode') == 1) {
 
         // Add support for dark styles.
         add_theme_support('dark-editor-style');
-        add_editor_style('style-editor-dark.css');
-
+        add_editor_style('css/dark-mode.css');
     }
 }
-// add_action('after_setup_theme', 'm_media_snippet_theme_enable_dark_mode');
+add_action('after_setup_theme', 'm_media_snippet_theme_enable_dark_mode');
 
 /**
  * Enable dark mode on the front end if m-media-snippet-theme-dark-mode setting is active.
@@ -115,20 +106,6 @@ function m_media_snippet_theme_enable_dark_mode_frontend_styles()
     }
 }
 add_action('wp_enqueue_scripts', 'm_media_snippet_theme_enable_dark_mode_frontend_styles');
-
-/**
- * Enable core block styles support if the m-media-snippet-theme-wp-block-styles setting is active.
- */
-function m_media_snippet_theme_enable_wp_block_styles()
-{
-
-    if (get_option('m-media-snippet-theme-wp-block-styles', 1) == 1) {
-
-        // Adding support for core block visual styles.
-        add_theme_support('wp-block-styles');
-    }
-}
-add_action('after_setup_theme', 'm_media_snippet_theme_enable_wp_block_styles');
 
 /**
  * Enable responsive embedded content if the m-media-snippet-theme-responsive-embeds setting is active.
