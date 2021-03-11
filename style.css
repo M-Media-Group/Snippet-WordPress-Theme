@@ -4,7 +4,7 @@ Theme URI: https://github.com/M-Media-Group/Snippet-WordPress-Theme
 Author: mmediagroup
 Author URI: https://mediagroup.fr
 Description: Snippet theme by M Media.
-Version: 1.0.0
+Version: 1.0.1
 Tested up to: 5.7
 Requires PHP: 5.4
 License: GNU General Public License v2 or later
@@ -1205,7 +1205,7 @@ li.product {
   margin: 3.6rem auto;
 }
 
-.button.single_add_to_cart_button, .button.checkout-button, #place_order.button, .comment-form .submit, .wp-block-search__button, .elementor-button-wrapper > .elementor-button, .post-password-form input[type="submit"] {
+.button.single_add_to_cart_button, .button.checkout-button, #place_order.button, .comment-form .submit, .wp-block-search .wp-block-search__button, .wp-block-search__button, .elementor-button-wrapper > .elementor-button, .post-password-form input[type="submit"] {
   color: var(--primary-text-contrast);
   background-color: var(--primary);
   border-color: var(--primary);
